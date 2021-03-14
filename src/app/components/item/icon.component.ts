@@ -27,11 +27,18 @@ export class IconComponent extends HTMLElement {
 
         this.item = item;
 
-        this.onclick = () => {
-            if (this.item.sections && this.item.sections.length > 0) {
-                AppState.item = this.item;
+        if (this._item.link) {
+            this.onclick = () => {
+                window.location.href = this._item.link;
+            }
+        } else {
+            this.onclick = () => {
+                if (this.item.sections && this.item.sections.length > 0) {
+                    AppState.item = this.item;
+                }
             }
         }
+
     }
 }
 customElements.define('dashboard-icon', IconComponent);

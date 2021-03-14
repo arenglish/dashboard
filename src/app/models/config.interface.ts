@@ -5,6 +5,7 @@ export interface Config {
 export interface Item {
     name?: string;
     icon?: string;
+    link?: string;
     sections?: Section[];
 }
 
