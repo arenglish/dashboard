@@ -52,7 +52,6 @@ module.exports = {
     new webpack.NormalModuleReplacementPlugin(
       /dashboard\.config\.json/,
       function (resource) {
-        console.log(resource);
         resource.request = resource.request.replace(/\.json/, `.prod.json`);
       }
     ),
