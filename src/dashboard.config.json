@@ -8,6 +8,20 @@
           "icon": "svg/slack-logo.svg"
         },
         {
+          "name": "Jira",
+          "icon": "svg/jira-logo.svg",
+          "sections": [
+            {
+              "items": [
+                {
+                  "name": "Muse Web",
+                  "icon": "svg/generic-web.svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Walmart",
           "icon": "svg/walmart-logo.svg"
         },
@@ -15,12 +29,23 @@
           "name": "Google",
           "icon": "svg/google-logo.svg"
         },
-        { "name": "Github", "icon" :  "svg/github-logo.svg", "sections": [{
-          "backgroundColor": "#ffeeeb",
-          "items": [
-            { "name": "Desktop NG", "icon": "svg/github-logo.svg", "link": "https://github.com/"}
+        {
+          "name": "Github",
+          "icon": "svg/github-logo.svg",
+          "sections": [
+            {
+              "backgroundColor": "#ffeeeb",
+              "items": [
+                {
+                  "name": "Github",
+                  "icon": "svg/github-logo.svg",
+                  "link": "https://github.com/"
+                }
+              ]
+            }
           ]
-        }]}]}
-
+        }
+      ]
+    }
   ]
 }

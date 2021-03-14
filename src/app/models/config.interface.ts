@@ -1,5 +1,5 @@
 export interface Config {
-    sections: Section[]
+    sections: Section[];
 }
 
 export interface Item {
