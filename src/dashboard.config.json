@@ -5,21 +5,13 @@
       "items": [
         {
           "name": "Slack",
-          "icon": "svg/slack-logo.svg"
+          "icon": "svg/slack-logo.svg",
+          "link": "https://slack.com"
         },
         {
           "name": "Jira",
           "icon": "svg/jira-logo.svg",
-          "sections": [
-            {
-              "items": [
-                {
-                  "name": "Muse Web",
-                  "icon": "svg/generic-web.svg"
-                }
-              ]
-            }
-          ]
+          "link": "https://jira.com"
         },
         {
           "name": "Walmart",
@@ -27,7 +19,18 @@
         },
         {
           "name": "Google",
-          "icon": "svg/google-logo.svg"
+          "icon": "svg/google-logo.svg",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Gmail",
+          "icon": "svg/gmail-logo.svg",
+          "link": "https://mail.google.com"
+        },
+        {
+          "name": "Photos",
+          "icon": "svg/google-photos-logo.svg",
+          "link": "https://photos.google.com"
         },
         {
           "name": "Github",
@@ -44,6 +47,26 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "backgroundColor": "#ffeeeb",
+      "items": [
+        {
+          "name": "Reddit",
+          "icon": "svg/reddit-logo.svg",
+          "link": "https://reddit.com"
+        },
+        {
+          "name": "Instagram",
+          "icon": "svg/instagram-logo.svg",
+          "link": "https://instagram.com"
+        },
+        {
+          "name": "Facebook",
+          "icon": "svg/facebook-logo.svg",
+          "link": "https://facebook.com"
         }
       ]
     }

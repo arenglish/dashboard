@@ -3,6 +3,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 
+const mode = process.env.WEBPACK_MODE || "prod";
+
+const prodPlugins = [
+  new webpack.NormalModuleReplacementPlugin(
+    /dashboard\.config\.json/,
+    function (resource) {
+      resource.request = resource.request.replace(/\.json/, `.prod.json`);
+    }
+  ),
+];
 module.exports = {
   entry: "./src/index.ts",
   devtool: "inline-source-map",
@@ -49,12 +59,7 @@ module.exports = {
       patterns: [{ from: "src/assets", to: "assets" }],
     }),
     new HtmlWebpackPlugin({ minify: false, template: "index.html" }),
-    new webpack.NormalModuleReplacementPlugin(
-      /dashboard\.config\.json/,
-      function (resource) {
-        resource.request = resource.request.replace(/\.json/, `.prod.json`);
-      }
-    ),
+    ...(mode === "prod" ? prodPlugins : []),
   ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
