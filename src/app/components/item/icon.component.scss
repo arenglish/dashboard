@@ -1,12 +1,13 @@
-dashboard-item {
+dashboard-icon {
   height: 64px;
   width: 64px;
+  display: block;
 
   img {
     cursor: pointer;
   }
 
   &:hover {
-    transform: scale(1.4, 1.4);
+    //transform: scale(1.4, 1.4);
   }
 }

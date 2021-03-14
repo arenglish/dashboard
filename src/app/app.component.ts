@@ -3,20 +3,31 @@ import { SectionComponent } from "./components/section/section.component";
 import {AppState, DashboardState} from "./services/state.service";
 import './app.component.scss';
 import {GoBackComponent} from "./components/go-back/go-back.component";
+import {IconComponent} from "./components/item/icon.component";
+import {PageComponent} from "./components/page/page.component";
 
 export class DashboardApp extends HTMLElement {
     connectedCallback() {
+        AppState.mapItems(CONFIG, null)
         AppState.registerOnChange((...args) => {
             this.renderPage(...args);
         });
-        AppState.page = { sections: CONFIG.sections, level: 0 };
+        AppState.item = CONFIG;
     }
     private renderPage(state: DashboardState) {
         this.innerHTML = '';
-        const section = new SectionComponent(state.page.sections[0]);
-        this.appendChild(section);
+        const page = new PageComponent(state.item);
+        this.appendChild(page);
+        // if (state.item.sections && state.item.sections.length > 0) {
+        //     state.item.sections.forEach(section => {
+        //         console.log(section);
+        //         const sectionEl = new SectionComponent(section, IconComponent);
+        //         this.appendChild(sectionEl);
+        //     })
+        // }
 
-        if (AppState.page.level > 0) {
+
+        if (AppState.item !== CONFIG) {
             const goBack = new GoBackComponent();
             this.appendChild(goBack)
         }

@@ -2,7 +2,7 @@ import {AppState} from "../../services/state.service";
 
 export class GoBackComponent extends HTMLElement {
     connectedCallback() {
-        this.onclick = () => AppState.page = AppState.previousPage;
+        this.onclick = () => AppState.item = AppState.previousItem;
 
         this.innerHTML = 'go back';
     }

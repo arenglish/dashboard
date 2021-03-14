@@ -1,12 +1,8 @@
-import './item.component.scss';
+import './icon.component.scss';
 import {Item} from "../../models/config.interface";
 import {AppState} from "../../services/state.service";
 
-export class ItemComponent extends HTMLElement {
-    static get observedAttributes() {
-        return ['columns'];
-    }
-
+export class IconComponent extends HTMLElement {
     render() {
         this.innerHTML = '';
         const image = document.createElement('img')
@@ -33,9 +29,9 @@ export class ItemComponent extends HTMLElement {
 
         this.onclick = () => {
             if (this.item.sections && this.item.sections.length > 0) {
-                AppState.page = { sections: this.item.sections, level: AppState.page.level + 1 };
+                AppState.item = this.item;
             }
         }
     }
 }
-customElements.define('dashboard-item', ItemComponent);
+customElements.define('dashboard-icon', IconComponent);
