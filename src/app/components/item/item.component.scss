@@ -1,0 +1,12 @@
+dashboard-item {
+  height: 64px;
+  width: 64px;
+
+  img {
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: scale(1.4, 1.4);
+  }
+}

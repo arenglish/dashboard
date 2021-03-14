@@ -1,0 +1,76 @@
+{
+  "sections": [
+    {
+      "backgroundColor": "#ffeeeb",
+      "items": [
+        {
+          "name": "Google",
+          "icon": "svg/google-logo.svg",
+          "sections": [
+            {
+              "backgroundColor": "#ebf2ff",
+              "items": [
+                {
+                  "name": "Google",
+                  "icon": "svg/google-logo.svg"
+                },
+                {
+                  "name": "Slack",
+                  "icon": "svg/slack-logo.svg"
+                },
+                {
+                  "name": "Walmart",
+                  "icon": "svg/walmart-logo.svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Slack",
+          "icon": "svg/slack-logo.svg"
+        },
+        {
+          "name": "Walmart",
+          "icon": "svg/walmart-logo.svg"
+        },
+        {
+          "name": "Google",
+          "icon": "svg/google-logo.svg"
+        },
+        {
+          "name": "Slack",
+          "icon": "svg/slack-logo.svg"
+        },
+        {
+          "name": "Walmart",
+          "icon": "svg/walmart-logo.svg"
+        },
+        {
+          "name": "Google",
+          "icon": "svg/google-logo.svg"
+        },
+        {
+          "name": "Slack",
+          "icon": "svg/slack-logo.svg"
+        },
+        {
+          "name": "Walmart",
+          "icon": "svg/walmart-logo.svg"
+        },
+        {
+          "name": "Google",
+          "icon": "svg/google-logo.svg"
+        },
+        {
+          "name": "Slack",
+          "icon": "svg/slack-logo.svg"
+        },
+        {
+          "name": "Walmart",
+          "icon": "svg/walmart-logo.svg"
+        }
+      ]
+    }
+  ]
+}
