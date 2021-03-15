@@ -1,10 +1,18 @@
 dashboard-icon {
   height: 64px;
   width: 64px;
-  display: block;
+  display: flex;
+  padding: 5px;
+  background: white;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
 
-  img {
-    cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
   }
 
   &:hover {

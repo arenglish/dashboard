@@ -14,7 +14,7 @@ export class PageComponent extends HTMLElement {
         grid.style.display = 'grid';
 
 
-        grid.style.gridTemplateColumns = `repeat(${this.columns}, min-content)`
+        grid.style.gridTemplateColumns = `repeat(${this.columns * 4}, min-content)`
         grid.style.gridGap = `15px`;
         if (this.item.sections && this.item.sections.length > 0) {
             this.item.sections.forEach(item => {
