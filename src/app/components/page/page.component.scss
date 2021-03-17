@@ -1,11 +1,22 @@
 dashboard-page {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+
+  #grid-container {
+    width: 50%;
+    height: 50%;
+  }
+  #grid {
+    justify-items: stretch;
+    align-items: stretch;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 192px);
+    grid-auto-columns: min-content;
+    grid-template-rows: repeat(auto-fill, 96px);
+  }
 }

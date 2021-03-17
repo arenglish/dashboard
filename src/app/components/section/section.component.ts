@@ -9,11 +9,11 @@ export class SectionComponent extends LifeCycleComponent {
     this.render();
   }
   render() {
-    this.innerHTML = "";
+    this.destroyChildren();
     this.style.backgroundColor = this.section.backgroundColor || "none";
-    this.style.gridTemplateColumns = `repeat(2, min-content)`;
-    this.style.gridRow = `span ${this.rows * 2}`;
-    this.style.gridColumn = `span ${this.columns * 2}`;
+    this.style.gridTemplateColumns = `repeat(2, 74px)`;
+    this.style.gridColumnStart = `span 1`;
+    this.style.gridRowStart = `span ${this.rows}`;
     this._section.items.forEach((item: any) => {
       this.appendChild(new IconComponent(item));
     });
@@ -35,7 +35,7 @@ export class SectionComponent extends LifeCycleComponent {
   }
 
   private get rows(): number {
-    return Math.ceil(this.section.items.length / this.columns);
+    return Math.ceil(this.section.items.length / 2);
   }
 
   constructor(section: Section) {

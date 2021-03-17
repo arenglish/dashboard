@@ -14,12 +14,15 @@ export class LifeCycleComponent extends HTMLElement {
       this.onChange(changes)
     );
   }
-  destroyChildren(el: ChildNode = this) {
-    el.childNodes.forEach((node) => {
-      if (node.hasChildNodes()) {
-        this.destroyChildren(node);
-      } else if ((node as any).destroy) {
-        (node as any).destroy();
+  destroyChildren(el: HTMLElement = this) {
+    [...el.children].forEach((child: HTMLElement) => {
+      if (child.hasChildNodes()) {
+        this.destroyChildren(child);
+      }
+      if ((child as any).destroy) {
+        (child as any).destroy();
+      } else {
+        child.remove();
       }
     });
   }

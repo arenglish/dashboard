@@ -3,12 +3,7 @@ import { SectionComponent } from "../section/section.component";
 import "./page.component.scss";
 import { GoBackComponent } from "../go-back/go-back.component";
 import { LifeCycleComponent } from "../lifecycle.component";
-import {
-  AppState,
-  Changes,
-  EnterEditModeAction,
-  ToggleEditMode,
-} from "../../services/state.service";
+import { AppState, Changes } from "../../services/state.service";
 
 export class PageComponent extends LifeCycleComponent {
   onChange(changes: Changes) {
@@ -16,29 +11,18 @@ export class PageComponent extends LifeCycleComponent {
   }
 
   render(changes: Changes = null) {
-    this.innerHTML = `
-            <div id="grid-container" style="display: grid"></div>
-            <div id="back-container"></div>
-        `;
-    const edit = document.createElement("button");
-    edit.innerHTML = "EDIT";
-    edit.onclick = () => {
-      this.state.action(new ToggleEditMode());
-    };
-    this.appendChild(edit);
-    this.style.backgroundColor = this.state.editMode ? "indianred" : "white";
+    this.destroyChildren();
+    const gridParent = document.createElement("div");
+    gridParent.id = "grid-container";
     const grid = document.createElement("div");
-    grid.style.display = "grid";
+    grid.id = "grid";
+    this.item.sections.forEach((section) => {
+      const el = new SectionComponent(section);
+      grid.appendChild(el);
+    });
 
-    grid.style.gridTemplateColumns = `repeat(${this.columns * 4}, min-content)`;
-    grid.style.gridGap = `15px`;
-    if (this.item.sections && this.item.sections.length > 0) {
-      this.item.sections.forEach((item) => {
-        grid.appendChild(new SectionComponent(item));
-      });
-    }
-
-    this.appendChild(grid);
+    gridParent.appendChild(grid);
+    this.appendChild(gridParent);
     if (!!this.state.mappedItems.get(this.item).parent) {
       const goBack = new GoBackComponent();
       this.appendChild(goBack);
@@ -64,6 +48,27 @@ export class PageComponent extends LifeCycleComponent {
     setTimeout(() => {
       this.remove();
     }, 500);
+  }
+
+  private largestCollectionSize() {
+    return this.item.sections.reduce((largest, section) => {
+      if (!largest || !largest.items) {
+        return section;
+      }
+      if (!section || !section.items) {
+        return largest;
+      }
+
+      return largest.items.length > section.items.length ? largest : section;
+    }, null);
+  }
+
+  private totalChildItems() {
+    return this.item.sections.reduce((total, section) => {
+      const count = section && section.items ? section.items.length : 0;
+      total = total + count;
+      return total;
+    }, 0);
   }
 
   private _item: Item;

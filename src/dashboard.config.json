@@ -47,6 +47,51 @@
               ]
             }
           ]
+        },
+        {
+          "name": "Slack",
+          "icon": "svg/slack-logo.svg",
+          "link": "https://slack.com"
+        },
+        {
+          "name": "Jira",
+          "icon": "svg/jira-logo.svg",
+          "link": "https://jira.com"
+        },
+        {
+          "name": "Walmart",
+          "icon": "svg/walmart-logo.svg"
+        },
+        {
+          "name": "Google",
+          "icon": "svg/google-logo.svg",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Gmail",
+          "icon": "svg/gmail-logo.svg",
+          "link": "https://mail.google.com"
+        },
+        {
+          "name": "Photos",
+          "icon": "svg/google-photos-logo.svg",
+          "link": "https://photos.google.com"
+        },
+        {
+          "name": "Github",
+          "icon": "svg/github-logo.svg",
+          "sections": [
+            {
+              "backgroundColor": "#ffeeeb",
+              "items": [
+                {
+                  "name": "Github",
+                  "icon": "svg/github-logo.svg",
+                  "link": "https://github.com/"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
