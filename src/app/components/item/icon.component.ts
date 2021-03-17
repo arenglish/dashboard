@@ -4,15 +4,13 @@ import { AppState, MoveForwardAction } from "../../services/state.service";
 import { LifeCycleComponent } from "../lifecycle.component";
 
 export class IconComponent extends LifeCycleComponent {
-  onCHange() {
+  onChange() {
     this.render();
   }
   render() {
     this.innerHTML = "";
     const image = document.createElement("img");
     image.src = "assets/" + this._item.icon;
-    image.style.height = "100%";
-    image.style.height = "100%";
     if (this.item.backgroundColor) {
       this.style.background = this.item.backgroundColor;
     }

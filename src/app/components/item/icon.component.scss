@@ -11,6 +11,12 @@ dashboard-icon {
   cursor: pointer;
   transition: transform 100ms ease-in-out;
 
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
   &:hover {
     transform: scale(1.1);
   }
