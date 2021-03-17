@@ -25,6 +25,8 @@ export class PageComponent extends LifeCycleComponent {
     this.appendChild(gridParent);
     if (!!this.state.mappedItems.get(this.item).parent) {
       const goBack = new GoBackComponent();
+      goBack.style.position = 'absolute';
+      goBack.style.right = '64px';
       this.appendChild(goBack);
     }
   }

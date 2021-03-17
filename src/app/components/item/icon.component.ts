@@ -13,6 +13,9 @@ export class IconComponent extends LifeCycleComponent {
     image.src = "assets/" + this._item.icon;
     image.style.height = "100%";
     image.style.height = "100%";
+    if (this.item.backgroundColor) {
+      this.style.background = this.item.backgroundColor;
+    }
     this.appendChild(image);
   }
 

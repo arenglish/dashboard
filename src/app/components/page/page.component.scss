@@ -6,10 +6,11 @@ dashboard-page {
   width: 100%;
 
   #grid-container {
+    max-width: 70%;
     width: 50%;
-    height: 50%;
   }
   #grid {
+    margin: 0 auto;
     justify-items: stretch;
     align-items: stretch;
     display: grid;

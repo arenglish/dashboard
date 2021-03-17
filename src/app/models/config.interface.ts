@@ -7,6 +7,7 @@ export interface Item {
     icon?: string;
     link?: string;
     sections?: Section[];
+    backgroundColor?: string;
 }
 
 export interface Section {
