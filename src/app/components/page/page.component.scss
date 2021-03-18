@@ -10,14 +10,15 @@ dashboard-page {
     width: 50%;
   }
   #grid {
+    justify-content: center;
     margin: 0 auto;
     justify-items: stretch;
     align-items: stretch;
     display: grid;
     grid-auto-flow: dense;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, 192px);
+    grid-template-columns: repeat(auto-fill, 178px);
     grid-auto-columns: min-content;
-    grid-template-rows: repeat(auto-fill, 96px);
+    grid-template-rows: repeat(auto-fill, 94px);
   }
 }

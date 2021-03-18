@@ -15,7 +15,7 @@ export class SectionComponent extends LifeCycleComponent {
     this.style.gridColumnStart = `span 1`;
     this.style.gridRowStart = `span ${this.rows}`;
     this._section.items.forEach((item: any) => {
-      this.appendChild(new IconComponent(item));
+      this.appendChild(new IconComponent(AppState, item));
     });
   }
 

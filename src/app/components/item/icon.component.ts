@@ -1,7 +1,12 @@
-import "./icon.component.scss";
 import { Item } from "../../models/config.interface";
-import { AppState, MoveForwardAction } from "../../services/state.service";
+import {
+  AppState,
+  DashboardState,
+  MoveForwardAction,
+} from "../../services/state.service";
 import { LifeCycleComponent } from "../lifecycle.component";
+const css = require("./icon.component.scss");
+console.log(css);
 
 export class IconComponent extends LifeCycleComponent {
   onChange() {
@@ -27,8 +32,8 @@ export class IconComponent extends LifeCycleComponent {
     this.render();
   }
 
-  constructor(item: Item) {
-    super(AppState);
+  constructor(state: DashboardState, item: Item) {
+    super(state);
 
     this.item = item;
 
