@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 
-const mode = process.env.WEBPACK_MODE || "prod";
+const mode = "prod";
 
 const prodPlugins = [
   new webpack.NormalModuleReplacementPlugin(
